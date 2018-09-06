@@ -1,0 +1,16 @@
+Starting Chef Client, version 14.4.56[0m
+resolving cookbooks for run list: ["task1_community"][0m
+Synchronizing Cookbooks:[0m
+  - cron (6.2.1)[0m
+  - task1_community (0.1.0)[0m
+Installing Cookbook Gems:[0m
+Compiling Cookbooks...[0m
+Converging 2 resources[0m
+Recipe: cron::default[0m
+  * yum_package[cronie] action install (up to date)
+  * service[cron] action enable (up to date)
+  * service[cron] action start (up to date)
+[0m
+Running handlers:[0m
+Running handlers complete
+[0mChef Client finished, 0/3 resources updated in 10 seconds[0m

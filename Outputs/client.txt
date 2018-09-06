@@ -1,0 +1,40 @@
+Starting Chef Client, version 14.4.56[0m
+resolving cookbooks for run list: ["task1_apache", "task1_apache::php", "task1_apache::apache"][0m
+Synchronizing Cookbooks:[0m
+  - task1_apache (0.1.0)[0m
+Installing Cookbook Gems:[0m
+Compiling Cookbooks...[0m
+Converging 6 resources[0m
+Recipe: task1_apache::default[0m
+  * execute[update-upgrade] action run
+    [32m- execute sudo yum install net-tools -y[0m
+[0mRecipe: task1_apache::php[0m
+  * yum_package[php] action install
+    [32m- install version 0:5.4.16-45.el7.x86_64 of package php[0m
+[0m  * yum_package[php-mysql] action install
+    [32m- install version 0:5.4.16-45.el7.x86_64 of package php-mysql[0m
+[0m  * file[/var/www/html/info.php] action create
+    [32m- create new file /var/www/html/info.php[0m
+    [32m- update content in file /var/www/html/info.php from none to 16db5f[0m
+    [37m--- /var/www/html/info.php	2018-09-06 17:45:28.405679316 +0100[0m
+    [37m+++ /var/www/html/.chef-info20180906-3663-1pelkro.php	2018-09-06 17:45:28.405679316 +0100[0m
+    [37m@@ -1 +1,7 @@[0m
+    [37m+<?php[0m
+    [37m+[0m
+    [37m+	// Show all information, defaults to INFO_ALL[0m
+    [37m+	phpinfo();[0m
+    [37m+[0m
+    [37m+	?>[0m
+    [32m- change mode from '' to '0755'[0m
+    [32m- change owner from '' to 'root'[0m
+    [32m- change group from '' to 'root'[0m
+[0mRecipe: task1_apache::apache[0m
+  * yum_package[httpd] action install (up to date)
+  * service[httpd] action enable
+    [32m- enable service service[httpd][0m
+[0m  * service[httpd] action start
+    [32m- start service service[httpd][0m
+[0m[0m
+Running handlers:[0m
+Running handlers complete
+[0mChef Client finished, 6/7 resources updated in 15 seconds[0m
