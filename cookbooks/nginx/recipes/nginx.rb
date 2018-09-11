@@ -19,8 +19,7 @@ end
 template "/etc/nginx/conf.d/jboss.conf'" do   
   source "jboss_conf.conf.erb"
   variables(
-    ip: search(:node, 'roles:jboss')[0]["network"]["interfaces"]["enp0s8"]["addresses"].detect{|k,v| v[:family] == "inet" }.first,
-    port: node['nginx']['port']
+    ip: search(:node, 'roles:jboss')[0]["network"]["interfaces"]["enp0s8"]["addresses"].detect{|k,v| v[:family] == "inet" }.first
   )
   notifies :reload, "service[nginx]"
 end
